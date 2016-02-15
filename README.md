@@ -1,4 +1,4 @@
-Sliding Digits.
+#Sliding Digits.
  _____ _____ _____ _____
 |     |     |     |     |
 |  1  |  2  |  3  |  4  |
