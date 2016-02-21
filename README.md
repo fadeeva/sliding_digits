@@ -1,4 +1,5 @@
 #Sliding Digits
+![Image of Logo](https://github.com/fadeeva/sliding_digits/blob/master/img/logo_in_box.png)
 |~|~|~|~|~|~|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |**~**|`1`|`2`|`3`|`4`|**~**|
