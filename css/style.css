@@ -1,0 +1,50 @@
+body{
+    background: url('../img/cartographer.png');
+}
+
+header{
+    width: 483px;
+    display: block;
+    margin: 40px auto;
+    padding-left: 90px; 
+}
+
+    header > img{
+        float: left;
+        transform: rotate(-15deg);
+    }
+
+    h1{
+        padding: 20px 0 0 120px;
+        font-family: sans-serif;
+        color: antiquewhite;
+        text-decoration: underline;
+    }
+
+main{
+    background: url('../img/desk.png') no-repeat;
+    width: 483px;
+    height: 510px;
+    margin: 40px auto;
+    padding: 36px 34px;
+}
+
+.button {
+	width: 103px;
+    height: 104px;
+    background: url('../img/button.png');
+    float: left;
+    margin-top: 3px;
+    text-align: center;
+}
+    
+    .button > img {
+        margin-top: 28px;
+    }
+
+.null {
+	width: 103px;
+    height: 104px;
+    float: left;
+    margin-top: 3px;
+}
