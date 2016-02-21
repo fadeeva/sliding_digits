@@ -30,6 +30,7 @@ main{
 }
 
 .button {
+    /*position: absolute;*/
 	width: 103px;
     height: 104px;
     background: url('../img/button.png');
