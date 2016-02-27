@@ -2,6 +2,7 @@ body{
     background: url('../img/cartographer.png');
 }
 
+/*----  HEADER ----*/
 header{
     width: 483px;
     display: block;
@@ -21,7 +22,9 @@ header{
         text-decoration: underline;
     }
 
+/*----  MAIN ----*/
 main{
+    position: relative;
     background: url('../img/board.png') no-repeat;
     width: 483px;
     height: 480px;
@@ -30,13 +33,13 @@ main{
 }
 
 .button {
-    /*position: absolute;*/
+    position: absolute;
 	width: 103px;
     height: 104px;
     background: url('../img/button.png');
-    float: left;
-    margin-top: 3px;
+    margin-top: 40px;
     text-align: center;
+    cursor: pointer;
 }
     
     .button > img {
@@ -44,12 +47,99 @@ main{
     }
 
 .null {
-	width: 103px;
+	position: absolute;
+    width: 103px;
     height: 104px;
-    float: left;
-    margin-top: 3px;
+    margin-top: 40px;
+    background: aqua;
+    opacity: .5;
 }
 
+/*-- ROW1 --*/
+#x1_y1 {    
+    top: 0px;
+    left 0px;
+}
+
+#x1_y2 {    
+    top: 0px;
+    left: 137px;
+}
+
+#x1_y3 {    
+    top: 0px;
+    left: 240px;
+}
+
+#x1_y4 {    
+    top: 0px;
+    left: 343px;
+}
+
+/*-- ROW2 --*/
+#x2_y1 {    
+    top: 107px;
+    left 0px;
+}
+
+#x2_y2 {    
+    top: 107px;
+    left: 137px;
+}
+
+#x2_y3 {    
+    top: 107px;
+    left: 240px;
+}
+
+#x2_y4 {    
+    top: 107px;
+    left: 343px;
+}
+
+/*-- ROW3 --*/
+#x3_y1 {    
+    top: 214px;
+    left 0px;
+}
+
+#x3_y2 {    
+    top: 214px;
+    left: 137px;
+}
+
+#x3_y3 {    
+    top: 214px;
+    left: 240px;
+}
+
+#x3_y4 {    
+    top: 214px;
+    left: 343px;
+}
+
+/*-- ROW4 --*/
+#x4_y1 {    
+    top: 321px;
+    left 0px;
+}
+
+#x4_y2 {    
+    top: 321px;
+    left: 137px;
+}
+
+#x4_y3 {    
+    top: 321px;
+    left: 240px;
+}
+
+#x4_y4 {    
+    top: 321px;
+    left: 343px;
+}
+
+/*----  FOOTER ----*/
 footer {
     width: 483px;
     display: block;
