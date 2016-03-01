@@ -27,9 +27,9 @@ main{
     position: relative;
     background: url('../img/board.png') no-repeat;
     width: 483px;
-    height: 480px;
+    height: 520px;
     margin: 40px auto 0 auto;
-    padding: 36px 34px;
+    /*padding: 36px 34px;*/
 }
 
 .button {
@@ -51,14 +51,14 @@ main{
     width: 103px;
     height: 104px;
     margin-top: 40px;
-    background: aqua;
-    opacity: .5;
+    /*background: aqua;
+    opacity: .5;*/
 }
 
 /*-- ROW1 --*/
 #x1_y1 {    
     top: 0px;
-    left 0px;
+    left: 34px;
 }
 
 #x1_y2 {    
@@ -79,7 +79,7 @@ main{
 /*-- ROW2 --*/
 #x2_y1 {    
     top: 107px;
-    left 0px;
+    left: 34px;
 }
 
 #x2_y2 {    
@@ -100,7 +100,7 @@ main{
 /*-- ROW3 --*/
 #x3_y1 {    
     top: 214px;
-    left 0px;
+    left: 34px;
 }
 
 #x3_y2 {    
@@ -121,7 +121,7 @@ main{
 /*-- ROW4 --*/
 #x4_y1 {    
     top: 321px;
-    left 0px;
+    left: 34px;
 }
 
 #x4_y2 {    
@@ -143,7 +143,6 @@ main{
 footer {
     width: 483px;
     display: block;
-    margin: auto;
+    margin: 20px auto;
     text-align: center;
-    padding-right: 60px;
 }
