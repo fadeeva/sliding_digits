@@ -29,7 +29,6 @@ main{
     width: 483px;
     height: 520px;
     margin: 40px auto 0 auto;
-    /*padding: 36px 34px;*/
 }
 
 .button {
@@ -51,8 +50,6 @@ main{
     width: 103px;
     height: 104px;
     margin-top: 40px;
-    /*background: aqua;
-    opacity: .5;*/
 }
 
 /*-- ROW1 --*/

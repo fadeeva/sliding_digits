@@ -22,7 +22,7 @@ $(document).ready(function(){
         var nullButtonCoordanates = getCoordinates(nullButtonId);
         var digitButtonCoordinates = getCoordinates(digitButtonId);
         
-        if( ((x == xNull) && (Math.abs(y - yNull) == 1)) || ((y == yNull) && (Math.abs(x - xNull) == 1))) {
+        if( moveIsLegal(x, y, xNull, yNull) ) {
             digitButton.animate({"top": nullButtonCoordanates.top,
                                  "left": nullButtonCoordanates.left});
             nullButton.animate({"top": digitButtonCoordinates.top, 
@@ -37,6 +37,12 @@ $(document).ready(function(){
     })
     
 });
+
+function moveIsLegal(x, y, xNull, yNull) {
+    var result = ( (x == xNull) && (Math.abs(y - yNull) == 1))
+               || ((y == yNull) && (Math.abs(x - xNull) == 1) );
+    return result;
+}
 
 function getCoordinates(elementID) {
     var coordinates = {
