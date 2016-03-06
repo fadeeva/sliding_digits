@@ -7,7 +7,9 @@
 */
 
 $(document).ready(function(){
-
+    
+    setNewBoard(); // F5
+    
     $(".button").click(function(){   
         var digitButton = $(this);
         var nullButton = $(".null");
@@ -125,10 +127,39 @@ function getCoordinates(elementID) {
     return coordinates;
 }
 
-function shuffle(array){
-    return array;
+function shuffle() {
+    var orderedBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    var r, a;
+    
+    for(var i = 0; i < orderedBoard.length; i++) {
+        r = Math.floor(Math.random() * (orderedBoard.length - 1));
+        a = orderedBoard[i];
+        orderedBoard[i] = orderedBoard[r];
+        orderedBoard[r] = a;
+    }
+    return orderedBoard;
 }
 
-var orderedBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
-var shuffleBoard = shuffle(orderedBoard);
-//console.log(shuffleBoard);
+function setNewBoard() {   
+    var randomBoard = shuffle();    
+    var button = $("main");
+    var imgUrlBase = "img/digits/";
+    var str, img;
+    var grid = [
+                "x1_y1", "x1_y2", "x1_y3", "x1_y4",
+                "x2_y1", "x2_y2", "x2_y3", "x2_y4",
+                "x3_y1", "x3_y2", "x3_y3", "x3_y4",
+                "x4_y1", "x4_y2", "x4_y3", "x4_y4",
+                ];
+   
+    for(var i = 0; i < randomBoard.length; i++){
+        if(randomBoard[i] != 0){
+            img = "<img src=" + imgUrlBase + randomBoard[i] + ".png alt=" + randomBoard[i] +">";
+            str = "<div id=" + grid[i] + " class=button>" + img + "</div>";
+            button.append(str);
+        }else{
+            str = "<div id=" + grid[i] + " class=null><img></div>";
+            button.append(str);
+        }
+    }    
+}
