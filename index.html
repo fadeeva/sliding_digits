@@ -6,23 +6,57 @@
     <script src="lib/jquery-2.2.0.min.js"></script>
     <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flex.css">
     
     <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
 </head>
 <body>
     
     <header>
-        <img src="img/logo_in_box.png" alt="Sliding Digits' logo"><h1>Пятнашки</h1>
+        <div class="flex_row">
+            <div class="flex_2">
+                <div class="flex_container flex-end">
+                    <img src="img/logo_in_box.png" alt="Sliding Digits' logo">
+                </div>
+
+            </div>
+
+            <div class="flex_2">
+                <div class="flex_container flex-start">
+                    <h1>Пятнашки</h1>
+                </div>
+            </div>
+
+        </div>
     </header>
     
-    <div style="clear: both"></div>
-    
     <main>
-       <!-- setNewBoard() -->
+
+        <div class="flex_row ">
+            <div class="flex_4 red">WATCH</div>
+
+            <div class="flex_2">
+                <div class="flex_container center">
+                   <div id="board">
+                       <!-- setNewBoard() -->
+                   </div>
+                  
+                </div>
+            </div>
+
+            <div class="flex_4 red"></div>
+        </div>
+
     </main>
     
     <footer>
-        <img src="img/fadeeva_logo.png" alt="Fadeeva's logo">
+       <div class="flex_row">
+            <div class="flex_1 blue">
+                <div class="flex_container center">
+                    <img src="img/fadeeva_logo.png" alt="Fadeeva's logo">
+                </div>
+            </div>
+        </div>        
     </footer>
 </body>
 </html>

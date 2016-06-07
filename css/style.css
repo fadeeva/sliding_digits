@@ -1,34 +1,32 @@
 body{
     background: url('../img/cartographer.png');
+    margin: 0;
+    padding: 0; 
 }
 
 /*----  HEADER ----*/
-header{
-    width: 483px;
-    display: block;
-    margin: 40px auto;
-    padding-left: 90px; 
+
+header {
+    margin: 40px 0;
 }
 
-    header > img{
-        float: left;
-        transform: rotate(-15deg);
-    }
+header img{
+    transform: rotate(-15deg);
+    margin-right: 30px;
+}
 
-    h1{
-        padding: 20px 0 0 120px;
-        font-family: sans-serif;
-        color: antiquewhite;
-        text-decoration: underline;
-    }
+h1{
+    font-family: sans-serif;
+    color: antiquewhite;
+    text-decoration: underline;
+}
 
 /*----  MAIN ----*/
-main{
+#board {
     position: relative;
     background: url('../img/board.png') no-repeat;
-    width: 483px;
     height: 520px;
-    margin: 40px auto 0 auto;
+    width: 483px;
 }
 
 .button {
@@ -138,8 +136,12 @@ main{
 
 /*----  FOOTER ----*/
 footer {
-    width: 483px;
-    display: block;
-    margin: 20px auto;
-    text-align: center;
+    margin: 40px 0;
+}
+
+/*----  MOBILE ----*/
+@media screen and (max-width: 480px) {
+    header img{
+        margin-right: 0px;
+    }
 }

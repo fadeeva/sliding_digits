@@ -142,7 +142,7 @@ function shuffle() {
 
 function setNewBoard() {   
     var randomBoard = shuffle();    
-    var button = $("main");
+    var button = $("#board");
     var imgUrlBase = "img/digits/";
     var str, img;
     var grid = [
