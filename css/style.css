@@ -29,6 +29,16 @@ h1{
     width: 483px;
 }
 
+#freeze {
+    position: absolute;
+    height: 520px;
+    width: 483px;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
 .button {
     position: absolute;
 	width: 103px;
@@ -37,6 +47,7 @@ h1{
     margin-top: 40px;
     text-align: center;
     cursor: pointer;
+    z-index: 1;
 }
     
     .button > img {
@@ -132,6 +143,45 @@ h1{
 #x4_y4 {    
     top: 321px;
     left: 343px;
+}
+
+/*-- StopWatch --*/
+#stopwatch_container {
+	width: 260px;
+    height: 150px;
+    margin: 0px auto;
+}
+
+#stopwatch {
+    color: azure;
+    font-weight: bold;
+    font-size: 48px;
+    margin: 0px 124px;
+}
+
+#stop_button, #start_button {
+	width: 120px;
+    background-color: aqua;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    float: left;
+    margin-left: 10px;
+    box-shadow: 0px 4px 0 rgba(0, 0, 255, 1);
+}
+
+#stop_button:hover, #start_button:hover {
+    background-color: aquamarine;
+}
+
+#stop_button:active, #start_button:active {
+    margin-top: 43px;
+    box-shadow: 0px 1px 0 rgba(0, 0, 255, 1);
 }
 
 /*----  FOOTER ----*/

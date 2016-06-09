@@ -8,9 +8,18 @@
 
 $(document).ready(function(){
     
-    setNewBoard(); // F5
+    orderBoard();
     
-    $(".button").click(function(){   
+    $("#start_button").click(function(){
+        newGame();
+    })
+    
+    $("#stopwatch_container").delegate('#stop_button', 'click', function(){
+        stopWatch();
+        orderBoard();
+    })
+       
+    $("#board").delegate('.button', 'click', function(){
         var digitButton = $(this);
         var nullButton = $(".null");
         var digitButtonId = digitButton.get(0).id;
@@ -39,6 +48,28 @@ $(document).ready(function(){
     })
     
 });
+
+function newGame() {
+    setNewBoard();
+    startWatch();
+}
+
+function setNewBoard() {
+    clearBoard();
+    var randomBoard = shuffle();    
+    drawBoard(randomBoard);  
+}
+
+function clearBoard() {
+    $("#board").empty();
+}
+
+function orderBoard() {
+    clearBoard();
+    $('#board').append('<div id=freeze></div>')
+    var orderBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];    
+    drawBoard(orderBoard);
+}
 
 function moveIsLegal(x, y, xNull, yNull) {
     var result = ( (x == xNull) && (Math.abs(y - yNull) == 1))
@@ -140,8 +171,7 @@ function shuffle() {
     return orderedBoard;
 }
 
-function setNewBoard() {   
-    var randomBoard = shuffle();    
+function drawBoard(order) {
     var button = $("#board");
     var imgUrlBase = "img/digits/";
     var str, img;
@@ -152,14 +182,18 @@ function setNewBoard() {
                 "x4_y1", "x4_y2", "x4_y3", "x4_y4",
                 ];
    
-    for(var i = 0; i < randomBoard.length; i++){
-        if(randomBoard[i] != 0){
-            img = "<img src=" + imgUrlBase + randomBoard[i] + ".png alt=" + randomBoard[i] +">";
+    for(var i = 0; i < order.length; i++){
+        if(order[i] != 0){
+            img = "<img src=" + imgUrlBase + order[i] + ".png alt=" + order[i] +">";
             str = "<div id=" + grid[i] + " class=button>" + img + "</div>";
             button.append(str);
         }else{
             str = "<div id=" + grid[i] + " class=null><img></div>";
             button.append(str);
         }
-    }    
+    }
 }
+
+
+
+/*------------*/
