@@ -167,29 +167,43 @@ h1{
     letter-spacing: 40px;
 }
 
-#stop_button, #start_button {
-	width: 120px;
-    background-color: aqua;
-    text-align: center;
+#button_container {
+	width: 90px;
+    height: 90px;
+    background: url('../img/buttons/border.png') no-repeat;
     margin-top: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
+}
+
+.start_button {
+	width: 45px;
+    height: 79px;
+    background: url('../img/buttons/start.png') no-repeat;
+    margin: 22px 0 0 16px;
     cursor: pointer;
-    float: left;
-    margin-right: 10px;
-    box-shadow: 0px 4px 0 rgba(0, 0, 255, 1);
 }
 
-#stop_button:hover, #start_button:hover {
-    background-color: aquamarine;
+.start_button:active {
+	width: 35px;
+    height: 40px;
+    background: url('../img/buttons/start_active.png') no-repeat;
+    margin: 26px 0 0 12px;
+    cursor: pointer;
 }
 
-#stop_button:active, #start_button:active {
-    margin-top: 43px;
-    box-shadow: 0px 1px 0 rgba(0, 0, 255, 1);
+.stop_button {
+	width: 60px;
+    height: 77px;
+    background: url('../img/buttons/stop.png') no-repeat;
+    margin: 28px 0 0 26px;
+    cursor: pointer;
+}
+
+.stop_button:active {
+	width: 32px;
+    height: 32px;
+    background: url('../img/buttons/stop_active.png') no-repeat;
+    margin: 30px 0 0 0px;
+    cursor: pointer;
 }
 
 /*----  FOOTER ----*/

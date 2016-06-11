@@ -10,13 +10,15 @@ $(document).ready(function(){
     
     orderBoard();
     
-    $("#start_button").click(function(){
-        newGame();
-    })
-    
-    $("#stopwatch_container").delegate('#stop_button', 'click', function(){
-        stopWatch();
-        orderBoard();
+    $("#stopwatch_container").delegate('#button', 'click', function(){
+        if($(this).hasClass('start_button')) {
+            newGame();
+            $(this).removeClass('start_button').addClass('stop_button');
+        }else {
+            stopWatch();
+            orderBoard();
+            $(this).removeClass('stop_button').addClass('start_button');
+        }
     })
        
     $("#board").delegate('.button', 'click', function(){
@@ -49,6 +51,8 @@ $(document).ready(function(){
     
 });
 
+var rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+
 function newGame() {
     setNewBoard();
     startWatch();
@@ -66,9 +70,8 @@ function clearBoard() {
 
 function orderBoard() {
     clearBoard();
-    $('#board').append('<div id=freeze></div>')
-    var orderBoard = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];    
-    drawBoard(orderBoard);
+    $('#board').append('<div id=freeze></div>')    
+    drawBoard(rightOrder);
 }
 
 function moveIsLegal(x, y, xNull, yNull) {
@@ -159,7 +162,7 @@ function getCoordinates(elementID) {
 }
 
 function shuffle() {
-    var orderedBoard = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+    var orderedBoard = rightOrder.slice();
     var r, a;
     
     for(var i = 0; i < orderedBoard.length; i++) {
