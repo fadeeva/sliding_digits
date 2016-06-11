@@ -64,6 +64,16 @@ main, header, footer {
     flex-direction: column;
 }
 
+.column-right {
+    flex-direction: column;
+    align-items: right;
+}
+
+.column-center {
+    flex-direction: column;
+    align-items: center;
+}
+
 .height-200 {
     height: 200px;
 }

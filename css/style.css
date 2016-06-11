@@ -17,7 +17,7 @@ header img{
 
 h1{
     font-family: sans-serif;
-    color: antiquewhite;
+    color: #ffffd2;
     text-decoration: underline;
 }
 
@@ -205,6 +205,44 @@ h1{
     margin: 30px 0 0 0px;
     cursor: pointer;
 }
+
+/*-- Progress --*/
+
+#progress_container {
+    margin: 10px 0 0 50px;
+}
+
+#progress_title {
+	color: #A9A07C;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+
+#progress_list {
+	list-style: none;
+    border-top: 4px solid #A9A07C;
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#progress_list li {    
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+    border-bottom: 1px solid #7F7C73;
+}
+
+#progress_list li:nth-child(1) { color: #ffffd2; }
+#progress_list li:nth-child(2) { color: #c8c8ad; }
+#progress_list li:nth-child(3) { color: #9d9d89; }
+#progress_list li:nth-child(4) { color: #79796d; }
+#progress_list li:nth-child(5) { color: #51514b; }
 
 /*----  FOOTER ----*/
 footer {
