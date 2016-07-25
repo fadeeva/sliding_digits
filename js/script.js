@@ -45,6 +45,8 @@ $(document).ready(function(){
             digitButton.attr("id", nullButtonId);
             nullButton.removeAttr("id");
             nullButton.attr("id", digitButtonId);
+            
+            if(checkOrder()) alert('First row!!!')
         }  
         
     })
@@ -52,6 +54,26 @@ $(document).ready(function(){
 });
 
 var rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+
+function checkOrder() {
+    var coordinate;
+    var chip;
+    var z = 0;
+    
+    for(var i = 1; i <= 4; i++){
+        
+        for(var j = 1; j <= 4; j++){
+            z++;
+            coordinate = '#x' + i + '_' + 'y' + j;
+            chip = $("#board " + coordinate).children().attr('alt')
+            console.log(coordinate + ' : ' + chip + ' / ' + z);
+            if(chip != z) return false;
+            
+        }
+        return true;
+    }
+    
+}
 
 function newGame() {
     setNewBoard();
