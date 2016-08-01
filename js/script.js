@@ -60,8 +60,7 @@ function checkOrder() {
     var chip;
     var z = 0;
     
-    for(var i = 1; i <= 4; i++){
-        
+    for(var i = 1; i <= 4; i++){       
         for(var j = 1; j <= 4; j++){
             z++;
             coordinate = '#x' + i + '_' + 'y' + j;
