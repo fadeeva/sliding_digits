@@ -4,9 +4,12 @@ var t;
 var timer_is_on = 0;
 
 function stopWatch(){
+    
+    
+    
     restartWatch();
     clearInterval(interval);
-    timer_is_on = 0;
+    timer_is_on = 0;   
 }
 
 function timedCount(){

@@ -9,6 +9,7 @@
 $(document).ready(function(){
     
     orderBoard();
+    getListTimeRecord();
     
     $("#stopwatch_container").delegate('#button', 'click', function(){
         if($(this).hasClass('start_button')) {
@@ -19,7 +20,7 @@ $(document).ready(function(){
             orderBoard();
             $(this).removeClass('stop_button').addClass('start_button');
         }
-    })
+    });
        
     $("#board").delegate('.button', 'click', function(){
         var digitButton = $(this);
@@ -46,10 +47,14 @@ $(document).ready(function(){
             nullButton.removeAttr("id");
             nullButton.attr("id", digitButtonId);
             
-            if(checkOrder()) alert('First row!!!')
+            if(checkOrder()) {
+                console.log($("#stopwatch").text()); // getCurrentTime
+                stopWatch();
+                console.log("WIN")
+            }
         }  
         
-    })
+    });
     
 });
 
@@ -64,15 +69,17 @@ function checkOrder() {
         for(var j = 1; j <= 4; j++){
             z++;
             coordinate = '#x' + i + '_' + 'y' + j;
-            chip = $("#board " + coordinate).children().attr('alt')
-            console.log(coordinate + ' : ' + chip + ' / ' + z);
-            if(chip != z) return false;
-            
+            chip = $("#board " + coordinate).children().attr('alt');
+            if(!chip) chip = 16;
+            if(parseInt(chip) != z) {
+                return false;
+            }
         }
-        return true;
     }
     
+    return true;
 }
+
 
 function newGame() {
     setNewBoard();
@@ -217,7 +224,6 @@ function drawBoard(order) {
         }
     }
 }
-
 
 
 /*------------*/
