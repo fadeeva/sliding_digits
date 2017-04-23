@@ -9,9 +9,12 @@
 $(document).ready(function(){
     
     orderBoard();
-    getListTimeRecord();
+    writeInTimeRecords();
     
     $("#stopwatch_container").delegate('#button', 'click', function(){
+        
+        showWinWindow(false);
+        
         if($(this).hasClass('start_button')) {
             newGame();
             $(this).removeClass('start_button').addClass('stop_button');
@@ -47,10 +50,15 @@ $(document).ready(function(){
             nullButton.removeAttr("id");
             nullButton.attr("id", digitButtonId);
             
-            if(checkOrder()) {
-                console.log($("#stopwatch").text()); // getCurrentTime
+            if(isWin()) {
+                checkTime();
+                showWinWindow(true);
                 stopWatch();
-                console.log("WIN")
+                orderBoard();
+                
+                $("#button").removeClass('stop_button').addClass('start_button');
+                
+                //console.log("WIN")
             }
         }  
         
@@ -60,7 +68,24 @@ $(document).ready(function(){
 
 var rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
 
-function checkOrder() {
+function showWinWindow(show = false) {
+    if(show) {
+        $("#winner_container").css("display", "flex");
+        $("#current_time").text($("#stopwatch").text() + " сек.");
+    } else {
+        $("#winner_container").css("display", "none");
+    }
+}
+
+//var j = 0;
+function isWin() {
+    /*j++;
+    if(j > 3) {
+        j = 0;
+        return true;
+    }
+    return false;*/
+    
     var coordinate;
     var chip;
     var z = 0;
@@ -76,7 +101,6 @@ function checkOrder() {
             }
         }
     }
-    
     return true;
 }
 
@@ -224,6 +248,5 @@ function drawBoard(order) {
         }
     }
 }
-
 
 /*------------*/

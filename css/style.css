@@ -21,6 +21,11 @@ h1{
     text-decoration: underline;
 }
 
+h2{
+    font-family: sans-serif;
+    color: #ffffd2;
+}
+
 /*----  MAIN ----*/
 #board {
     position: relative;
@@ -206,8 +211,40 @@ h1{
     cursor: pointer;
 }
 
-/*-- Progress --*/
+/*-- Winner Container --*/
+#winner_container {
+    margin: 20px 30px;
+    padding: 10px;
+    
+    display: none;
+}
 
+#winner_container h2{
+    font-family: sans-serif;
+    color: #A9A07C;
+    margin: 12px;
+    padding: 0;
+}
+
+#winner_container p {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #A9A07C;
+    
+    padding: 0;
+    margin: 0;
+}
+
+#winner_container #current_time {
+	color: #ffffd2;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 6px 0;
+}
+
+/*-- Progress --*/
 #progress_container {
     margin: 10px 0 0 50px;
 }
