@@ -57,8 +57,6 @@ $(document).ready(function(){
                 orderBoard();
                 
                 $("#button").removeClass('stop_button').addClass('start_button');
-                
-                //console.log("WIN")
             }
         }  
         
@@ -77,15 +75,7 @@ function showWinWindow(show = false) {
     }
 }
 
-//var j = 0;
 function isWin() {
-    /*j++;
-    if(j > 3) {
-        j = 0;
-        return true;
-    }
-    return false;*/
-    
     var coordinate;
     var chip;
     var z = 0;
