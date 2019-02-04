@@ -1,0 +1,294 @@
+body{
+    background: url('../img/cartographer.png');
+    margin: 0;
+    padding: 0; 
+}
+
+/*----  HEADER ----*/
+
+header {
+    margin: 40px 0;
+}
+
+header img{
+    transform: rotate(-15deg);
+    margin-right: 30px;
+}
+
+h1{
+    font-family: sans-serif;
+    color: #ffffd2;
+    text-decoration: underline;
+}
+
+h2{
+    font-family: sans-serif;
+    color: #ffffd2;
+}
+
+/*----  MAIN ----*/
+#board {
+    position: relative;
+    background: url('../img/board.png') no-repeat;
+    height: 520px;
+    width: 483px;
+}
+
+#freeze {
+    position: absolute;
+    height: 520px;
+    width: 483px;
+    background: rgba(255, 255, 255, 0);
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+
+.button {
+    position: absolute;
+	width: 103px;
+    height: 104px;
+    background: url('../img/button.png');
+    margin-top: 40px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+}
+    
+    .button > img {
+        margin-top: 28px;
+    }
+
+.null {
+	position: absolute;
+    width: 103px;
+    height: 104px;
+    margin-top: 40px;
+}
+
+/*-- ROW1 --*/
+#x1_y1 {    
+    top: 0px;
+    left: 34px;
+}
+
+#x1_y2 {    
+    top: 0px;
+    left: 137px;
+}
+
+#x1_y3 {    
+    top: 0px;
+    left: 240px;
+}
+
+#x1_y4 {    
+    top: 0px;
+    left: 343px;
+}
+
+/*-- ROW2 --*/
+#x2_y1 {    
+    top: 107px;
+    left: 34px;
+}
+
+#x2_y2 {    
+    top: 107px;
+    left: 137px;
+}
+
+#x2_y3 {    
+    top: 107px;
+    left: 240px;
+}
+
+#x2_y4 {    
+    top: 107px;
+    left: 343px;
+}
+
+/*-- ROW3 --*/
+#x3_y1 {    
+    top: 214px;
+    left: 34px;
+}
+
+#x3_y2 {    
+    top: 214px;
+    left: 137px;
+}
+
+#x3_y3 {    
+    top: 214px;
+    left: 240px;
+}
+
+#x3_y4 {    
+    top: 214px;
+    left: 343px;
+}
+
+/*-- ROW4 --*/
+#x4_y1 {    
+    top: 321px;
+    left: 34px;
+}
+
+#x4_y2 {    
+    top: 321px;
+    left: 137px;
+}
+
+#x4_y3 {    
+    top: 321px;
+    left: 240px;
+}
+
+#x4_y4 {    
+    top: 321px;
+    left: 343px;
+}
+
+/*-- StopWatch --*/
+#stopwatch_container {
+	width: 260px;
+    height: 150px;
+    margin: 0px auto;
+}
+
+#watch_back {
+    width: 192px;
+    height: 117px;
+    background: url('../img/watch.png') no-repeat;
+}
+
+#stopwatch {
+    color: #ffffd2;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
+    margin: 48px 0 0 147px;
+    letter-spacing: 40px;
+}
+
+#button_container {
+	width: 90px;
+    height: 90px;
+    background: url('../img/buttons/border.png') no-repeat;
+    margin-top: 40px;
+}
+
+.start_button {
+	width: 45px;
+    height: 79px;
+    background: url('../img/buttons/start.png') no-repeat;
+    margin: 22px 0 0 16px;
+    cursor: pointer;
+}
+
+.start_button:active {
+	width: 35px;
+    height: 40px;
+    background: url('../img/buttons/start_active.png') no-repeat;
+    margin: 26px 0 0 12px;
+    cursor: pointer;
+}
+
+.stop_button {
+	width: 60px;
+    height: 77px;
+    background: url('../img/buttons/stop.png') no-repeat;
+    margin: 28px 0 0 26px;
+    cursor: pointer;
+}
+
+.stop_button:active {
+	width: 32px;
+    height: 32px;
+    background: url('../img/buttons/stop_active.png') no-repeat;
+    margin: 30px 0 0 0px;
+    cursor: pointer;
+}
+
+/*-- Winner Container --*/
+#winner_container {
+    margin: 20px 30px;
+    padding: 10px;
+    
+    display: none;
+}
+
+#winner_container h2{
+    font-family: sans-serif;
+    color: #A9A07C;
+    margin: 12px;
+    padding: 0;
+}
+
+#winner_container p {
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    color: #A9A07C;
+    
+    padding: 0;
+    margin: 0;
+}
+
+#winner_container #current_time {
+	color: #ffffd2;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 6px 0;
+}
+
+/*-- Progress --*/
+#progress_container {
+    margin: 10px 0 0 50px;
+}
+
+#progress_title {
+	color: #A9A07C;
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    margin: 0 0 0 20px;
+    padding: 0;
+}
+
+#progress_list {
+	list-style: none;
+    border-top: 4px solid #A9A07C;
+    width: 100px;
+    text-align: center;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+#progress_list li {    
+    font-family: Arial, sans-serif;
+    font-style: italic;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+    border-bottom: 1px solid #7F7C73;
+}
+
+#progress_list li:nth-child(1) { color: #ffffd2; }
+#progress_list li:nth-child(2) { color: #c8c8ad; }
+#progress_list li:nth-child(3) { color: #9d9d89; }
+#progress_list li:nth-child(4) { color: #79796d; }
+#progress_list li:nth-child(5) { color: #51514b; }
+
+/*----  FOOTER ----*/
+footer {
+    margin: 40px 0;
+}
+
+/*----  MOBILE ----*/
+@media screen and (max-width: 480px) {
+    header img{
+        margin-right: 0px;
+    }
+}

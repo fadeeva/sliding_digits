@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAME: Sliding Digits</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/flex.css">
+    
+    <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+</head>
+<body>
+    
+    <header>
+        <div class="flex_row">
+            <div class="flex_2">
+                <div class="flex_container flex-end">
+                    <img src="img/logo_in_box.png" alt="Sliding Digits' logo">
+                </div>
+
+            </div>
+
+            <div class="flex_2">
+                <div class="flex_container flex-start">
+                    <h1>Пятнашки</h1>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    
+    <main>
+
+        <div class="flex_row">
+            <div class="flex_4 center">
+                <div class="flex_row column" id="stopwatch_container">
+                    <div class="flex_1">
+                        <div class="flex_container center">
+                            <div id="watch_back">
+                                <div id="stopwatch">0</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex_1">
+                        <div class="flex_container center">
+                            <div id="button_container" class="flex_container center">
+                                <div id="button" class="start_button"></div>
+                            </div>
+                        </div>                     
+                    </div>
+                    
+                    <div class="flex_1">
+                        <div id="winner_container" class="flex_container column-center">
+                            <h2>Победа!</h2>
+                            <p>Ваше время:</p>
+                            <p id="current_time"></p>
+                        </div>                     
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="flex_2">
+                <div class="flex_container center">                  
+                   <div id="board">
+                       <!-- setNewBoard() -->
+                   </div>
+                  
+                </div>
+            </div>
+
+            <div class="flex_4 center">
+                <div class="flex_row column" id="progress_container">
+                    <div class="flex_1">
+                        <div class="flex_container column-left">
+                            <div id="progress_title">Рекорды</div>     
+                            <ul id="progress_list">
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                                <li>-</li>
+                            </ul>
+                        </div>
+                                             
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer>
+       <div class="flex_row">
+            <div class="flex_1">
+                <div class="flex_container center">
+                    <img src="img/fadeeva_logo.png" alt="Fadeeva's logo">
+                </div>
+            </div>
+        </div>        
+    </footer>
+    
+    <script src="lib/jquery-2.2.0.min.js"></script>
+    <script src="js/timestorage.js"></script>
+    <script src="js/watch.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
