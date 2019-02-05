@@ -10,7 +10,7 @@ function writeInTimeRecords() {
     if(!localStorage.getItem(4))
         localStorage.setItem(4, 999);
     
-    var timeRecords = $("#progress_list").children();
+    let timeRecords = $("#progress_list").children();
 
     timeRecords.each(function(i) {
         $(this).text(localStorage.getItem(i));
@@ -18,21 +18,21 @@ function writeInTimeRecords() {
 }
 
 function checkTime() {
-    var newTime = parseInt($("#stopwatch").text());
-    var arrTime = [];
+    let newTime = parseInt($("#stopwatch").text());
+    let arrTime = [];
     
-    for(var i = 0; i < 5; i++) {
+    for(let i = 0; i < 5; i++) {
         arrTime[i] = parseInt(localStorage.getItem(i));
     }
     
-    for(var i = 0; i < 5; i++) {
+    for(let i = 0; i < 5; i++) {
         if(newTime < arrTime[i]) {
             arrTime.splice(i, 0, newTime);
             break;
         }
     }
     
-    for(var i = 0; i < 5; i++) {
+    for(let i = 0; i < 5; i++) {
         localStorage.setItem(i, arrTime[i]);
     }
     

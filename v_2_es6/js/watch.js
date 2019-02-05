@@ -1,6 +1,6 @@
-var c = 0;
-var t;
-var timer_is_on = 0;
+let c = 0;
+let t;
+let timer_is_on = 0;
 
 function stopWatch(){
     restartWatch();

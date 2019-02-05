@@ -26,18 +26,18 @@ $(document).ready(function(){
     });
        
     $("#board").delegate('.button', 'click', function(){
-        var digitButton = $(this);
-        var nullButton = $(".null");
-        var digitButtonId = digitButton.get(0).id;
-        var nullButtonId = nullButton.get(0).id;
+        let digitButton = $(this);
+        let nullButton = $(".null");
+        let digitButtonId = digitButton.get(0).id;
+        let nullButtonId = nullButton.get(0).id;
         
-        var x = digitButton.get(0).id.slice(1, 2);
-        var y = digitButton.get(0).id.slice(4, 5);
-        var xNull = nullButton.get(0).id.slice(1, 2);
-        var yNull = nullButton.get(0).id.slice(4, 5);
+        let x = digitButton.get(0).id.slice(1, 2);
+        let y = digitButton.get(0).id.slice(4, 5);
+        let xNull = nullButton.get(0).id.slice(1, 2);
+        let yNull = nullButton.get(0).id.slice(4, 5);
         
-        var nullButtonCoordanates = getCoordinates(nullButtonId);
-        var digitButtonCoordinates = getCoordinates(digitButtonId);
+        let nullButtonCoordanates = getCoordinates(nullButtonId);
+        let digitButtonCoordinates = getCoordinates(digitButtonId);
         
         if( moveIsLegal(x, y, xNull, yNull) ) {
             digitButton.animate({"top": nullButtonCoordanates.top,
@@ -64,7 +64,7 @@ $(document).ready(function(){
     
 });
 
-var rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+let rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
 
 function showWinWindow(show = false) {
     if(show) {
@@ -76,12 +76,12 @@ function showWinWindow(show = false) {
 }
 
 function isWin() {
-    var coordinate;
-    var chip;
-    var z = 0;
+    let coordinate;
+    let chip;
+    let z = 0;
     
-    for(var i = 1; i <= 4; i++){       
-        for(var j = 1; j <= 4; j++){
+    for(let i = 1; i <= 4; i++){       
+        for(let j = 1; j <= 4; j++){
             z++;
             coordinate = '#x' + i + '_' + 'y' + j;
             chip = $("#board " + coordinate).children().attr('alt');
@@ -102,7 +102,7 @@ function newGame() {
 
 function setNewBoard() {
     clearBoard();
-    var randomBoard = shuffle();    
+    let randomBoard = shuffle();    
     drawBoard(randomBoard);  
 }
 
@@ -117,13 +117,13 @@ function orderBoard() {
 }
 
 function moveIsLegal(x, y, xNull, yNull) {
-    var result = ( (x == xNull) && (Math.abs(y - yNull) == 1))
+    let result = ( (x == xNull) && (Math.abs(y - yNull) == 1))
                || ((y == yNull) && (Math.abs(x - xNull) == 1) );
     return result;
 }
 
 function getCoordinates(elementID) {
-    var coordinates = {
+    let coordinates = {
         top: 0,
         left: 0
     };
@@ -204,10 +204,10 @@ function getCoordinates(elementID) {
 }
 
 function shuffle() {
-    var orderedBoard = rightOrder.slice();
-    var r, a;
+    let orderedBoard = rightOrder.slice();
+    let r, a;
     
-    for(var i = 0; i < orderedBoard.length; i++) {
+    for(let i = 0; i < orderedBoard.length; i++) {
         r = Math.floor(Math.random() * (orderedBoard.length - 1));
         a = orderedBoard[i];
         orderedBoard[i] = orderedBoard[r];
@@ -217,17 +217,17 @@ function shuffle() {
 }
 
 function drawBoard(order) {
-    var button = $("#board");
-    var imgUrlBase = "img/digits/";
-    var str, img;
-    var grid = [
+    let button = $("#board");
+    let imgUrlBase = "img/digits/";
+    let str, img;
+    let grid = [
                 "x1_y1", "x1_y2", "x1_y3", "x1_y4",
                 "x2_y1", "x2_y2", "x2_y3", "x2_y4",
                 "x3_y1", "x3_y2", "x3_y3", "x3_y4",
                 "x4_y1", "x4_y2", "x4_y3", "x4_y4",
                 ];
    
-    for(var i = 0; i < order.length; i++){
+    for(let i = 0; i < order.length; i++){
         if(order[i] != 0){
             img = "<img src=" + imgUrlBase + order[i] + ".png alt=" + order[i] +">";
             str = "<div id=" + grid[i] + " class=button>" + img + "</div>";
