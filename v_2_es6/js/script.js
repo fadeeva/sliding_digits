@@ -6,6 +6,13 @@
 |   (321, 34)  (321, 137)  (321, 240)  (321, 343)
 */
 
+const RIGHT_ORDER = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+const GRID = {
+    x : [0, 107, 214, 321],
+    y : [34, 137, 240, 343]
+}
+
+
 $(document).ready(function(){
     
     orderBoard();
@@ -64,8 +71,6 @@ $(document).ready(function(){
     
 });
 
-let rightOrder = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
-
 function showWinWindow(show = false) {
     if(show) {
         $("#winner_container").css("display", "flex");
@@ -94,7 +99,6 @@ function isWin() {
     return true;
 }
 
-
 function newGame() {
     setNewBoard();
     startWatch();
@@ -113,7 +117,7 @@ function clearBoard() {
 function orderBoard() {
     clearBoard();
     $('#board').append('<div id=freeze></div>')    
-    drawBoard(rightOrder);
+    drawBoard(RIGHT_ORDER);
 }
 
 function moveIsLegal(x, y, xNull, yNull) {
@@ -123,96 +127,28 @@ function moveIsLegal(x, y, xNull, yNull) {
 }
 
 function getCoordinates(elementID) {
-    let coordinates = {
-        top: 0,
-        left: 0
-    };
+    let coordinates = { top: 0, left: 0 };
     
-    switch(elementID) {
-        /*-ROW1-------------------------------*/
-        case "x1_y1" : 
-                        coordinates.top = 0;
-                        coordinates.left = 34;
-                        break;
-        case "x1_y2" : 
-                        coordinates.top = 0;
-                        coordinates.left = 137;
-                        break;
-        case "x1_y3" : 
-                        coordinates.top = 0;
-                        coordinates.left = 240;
-                        break;
-        case "x1_y4" : 
-                        coordinates.top = 0;
-                        coordinates.left = 343;
-                        break;
-        /*-ROW2-------------------------------*/
-        case "x2_y1" : 
-                        coordinates.top = 107;
-                        coordinates.left = 34;
-                        break;
-        case "x2_y2" : 
-                        coordinates.top = 107;
-                        coordinates.left = 137;
-                        break;
-        case "x2_y3" : 
-                        coordinates.top = 107;
-                        coordinates.left = 240;
-                        break;
-        case "x2_y4" : 
-                        coordinates.top = 107;
-                        coordinates.left = 343;
-                        break;
-        /*-ROW3-------------------------------*/
-        case "x3_y1" : 
-                        coordinates.top = 214;
-                        coordinates.left = 34;
-                        break;
-        case "x3_y2" : 
-                        coordinates.top = 214;
-                        coordinates.left = 137;
-                        break;
-        case "x3_y3" : 
-                        coordinates.top = 214;
-                        coordinates.left = 240;
-                        break;
-        case "x3_y4" : 
-                        coordinates.top = 214;
-                        coordinates.left = 343;
-                        break;
-        /*-ROW4-------------------------------*/
-        case "x4_y1" : 
-                        coordinates.top = 321;
-                        coordinates.left = 34;
-                        break;
-        case "x4_y2" : 
-                        coordinates.top = 321;
-                        coordinates.left = 137;
-                        break;
-        case "x4_y3" : 
-                        coordinates.top = 321;
-                        coordinates.left = 240;
-                        break;
-        case "x4_y4" : 
-                        coordinates.top = 321;
-                        coordinates.left = 343;
-                        break;
+    let elementID_x = elementID.split("_")[0][1] - 1;
+    let elementID_y = elementID.split("_")[1][1] - 1;
         
-        default : break;
-    }
+    coordinates.top = GRID.x[elementID_x];
+    coordinates.left = GRID.y[elementID_y];
+    
     return coordinates;
 }
 
 function shuffle() {
-    let orderedBoard = rightOrder.slice();
+    let orderedBoard = RIGHT_ORDER.slice();
     let r, a;
-    
+        
     for(let i = 0; i < orderedBoard.length; i++) {
         r = Math.floor(Math.random() * (orderedBoard.length - 1));
         a = orderedBoard[i];
         orderedBoard[i] = orderedBoard[r];
         orderedBoard[r] = a;
     }
+    
     return orderedBoard;
 }
 
