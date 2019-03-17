@@ -156,6 +156,9 @@ function drawBoard(order) {
     let button = $("#board");
     let imgUrlBase = "img/digits/";
     let str, img;
+    
+    let y, x;
+    
     let grid = [
                 "x1_y1", "x1_y2", "x1_y3", "x1_y4",
                 "x2_y1", "x2_y2", "x2_y3", "x2_y4",
@@ -172,7 +175,7 @@ function drawBoard(order) {
             str = "<div id=" + grid[i] + " class=null><img></div>";
             button.append(str);
         }
-    }
+    } console.log("-----------")
 }
 
 /*------------*/
