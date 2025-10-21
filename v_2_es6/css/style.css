@@ -1,3 +1,12 @@
+:root {
+    --pale-yellow: #ffffd2;
+    --light-olive: #c8c8ad;
+    --olive: #a9a07c;
+    --light-grey: #9d9d89;
+    --grey: #79796d;
+    --dark-grey: #51514b;
+}
+
 body{
     background: url('../img/cartographer.png');
     margin: 0;
@@ -6,9 +15,7 @@ body{
 
 /*----  HEADER ----*/
 
-header {
-    margin: 40px 0;
-}
+header { margin: 40px 0; }
 
 header img{
     transform: rotate(-15deg);
@@ -17,13 +24,13 @@ header img{
 
 h1{
     font-family: sans-serif;
-    color: #ffffd2;
+    color: var(--pale-yellow);
     text-decoration: underline;
 }
 
 h2{
     font-family: sans-serif;
-    color: #ffffd2;
+    color: var(--pale-yellow);
 }
 
 /*----  MAIN ----*/
@@ -55,9 +62,7 @@ h2{
     z-index: 1;
 }
     
-    .button > img {
-        margin-top: 28px;
-    }
+.button > img { margin-top: 28px; }
 
 .null {
 	position: absolute;
@@ -165,7 +170,7 @@ h2{
 }
 
 #stopwatch {
-    color: #ffffd2;
+    color: var(--pale-yellow);
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 36px;
@@ -222,7 +227,7 @@ h2{
 
 #winner_container h2{
     font-family: sans-serif;
-    color: #A9A07C;
+    color: var(--olive);
     margin: 12px;
     padding: 0;
 }
@@ -231,14 +236,14 @@ h2{
     font-family: Arial, sans-serif;
     font-style: italic;
     font-size: 14px;
-    color: #A9A07C;
+    color: var(--olive);
     
     padding: 0;
     margin: 0;
 }
 
 #winner_container #current_time {
-	color: #ffffd2;
+	color: var(--pale-yellow);
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 24px;
@@ -251,7 +256,7 @@ h2{
 }
 
 #progress_title {
-	color: #A9A07C;
+	color: var(--olive);
     font-family: Arial, sans-serif;
     font-style: italic;
     font-size: 14px;
@@ -261,7 +266,7 @@ h2{
 
 #progress_list {
 	list-style: none;
-    border-top: 4px solid #A9A07C;
+    border-top: 4px solid var(--olive);
     width: 100px;
     text-align: center;
     padding: 0;
@@ -276,20 +281,16 @@ h2{
     border-bottom: 1px solid #7F7C73;
 }
 
-#progress_list li:nth-child(1) { color: #ffffd2; }
-#progress_list li:nth-child(2) { color: #c8c8ad; }
-#progress_list li:nth-child(3) { color: #9d9d89; }
-#progress_list li:nth-child(4) { color: #79796d; }
-#progress_list li:nth-child(5) { color: #51514b; }
+#progress_list li:nth-child(1) { color: var(--pale-yellow); }
+#progress_list li:nth-child(2) { color: var(--light-olive); }
+#progress_list li:nth-child(3) { color: var(--light-grey) }
+#progress_list li:nth-child(4) { color: var(--grey); }
+#progress_list li:nth-child(5) { color: var(--dark-grey); }
 
 /*----  FOOTER ----*/
-footer {
-    margin: 40px 0;
-}
+footer { margin: 40px 0; }
 
 /*----  MOBILE ----*/
 @media screen and (max-width: 480px) {
-    header img{
-        margin-right: 0px;
-    }
+    header img{ margin-right: 0px; }
 }
