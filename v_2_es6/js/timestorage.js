@@ -9,16 +9,16 @@ function writeInTimeRecords() {
         localStorage.setItem(3, 998);
     if(!localStorage.getItem(4))
         localStorage.setItem(4, 999);
+        
+    let timeRecords = document.getElementById('progress_list').querySelectorAll('li')
     
-    let timeRecords = $("#progress_list").children();
-
-    timeRecords.each(function(i) {
-        $(this).text(localStorage.getItem(i));
-    });
+    timeRecords.forEach(function(record, i) {
+        record.innerHTML = localStorage.getItem(i)
+    })
 }
 
-function checkTime() {
-    let newTime = parseInt($("#stopwatch").text());
+function checkTime() {    
+    let newTime = parseInt(document.getElementById('stopwatch').innerText);
     let arrTime = [];
     
     for(let i = 0; i < 5; i++) {
