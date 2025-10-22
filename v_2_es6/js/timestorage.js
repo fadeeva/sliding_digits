@@ -10,30 +10,21 @@ function writeInTimeRecords() {
     if(!localStorage.getItem(4))
         localStorage.setItem(4, 999);
         
-    let timeRecords = document.getElementById('progress_list').querySelectorAll('li')
+    const timeRecords = document.getElementById('progress_list').querySelectorAll('li');
     
     timeRecords.forEach(function(record, i) {
-        record.innerHTML = localStorage.getItem(i)
+        record.innerHTML = localStorage.getItem(i);
     })
 }
 
 function checkTime() {    
     let newTime = parseInt(document.getElementById('stopwatch').innerText);
-    let arrTime = [];
-    
+
     for(let i = 0; i < 5; i++) {
-        arrTime[i] = parseInt(localStorage.getItem(i));
-    }
-    
-    for(let i = 0; i < 5; i++) {
-        if(newTime < arrTime[i]) {
-            arrTime.splice(i, 0, newTime);
+        if(newTime < parseInt(localStorage.getItem(i))) {
+            localStorage.setItem(i, newTime);
             break;
         }
-    }
-    
-    for(let i = 0; i < 5; i++) {
-        localStorage.setItem(i, arrTime[i]);
     }
     
     writeInTimeRecords();
