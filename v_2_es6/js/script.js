@@ -12,6 +12,7 @@ const GRID = {
     y : [34, 137, 240, 343]
 }
 
+const BOARD = document.getElementById("board");
 
 $(document).ready(function(){
     
@@ -111,12 +112,12 @@ function setNewBoard() {
 }
 
 function clearBoard() {
-    $("#board").empty();
+    BOARD.innerHTML = "";
 }
 
 function orderBoard() {
     clearBoard();
-    $('#board').append('<div id=freeze></div>')    
+    BOARD.innerHTML = "<div id=freeze></div>";
     drawBoard(RIGHT_ORDER);
 }
 
@@ -153,7 +154,6 @@ function shuffle() {
 }
 
 function drawBoard(order) {
-    let button = $("#board");
     let imgUrlBase = "img/digits/";
     let str, img;
     
@@ -170,12 +170,11 @@ function drawBoard(order) {
         if(order[i] != 0){
             img = "<img src=" + imgUrlBase + order[i] + ".png alt=" + order[i] +">";
             str = "<div id=" + grid[i] + " class=button>" + img + "</div>";
-            button.append(str);
         }else{
             str = "<div id=" + grid[i] + " class=null><img></div>";
-            button.append(str);
         }
-    } console.log("-----------")
+        BOARD.innerHTML += str;
+    }
 }
 
 /*------------*/
