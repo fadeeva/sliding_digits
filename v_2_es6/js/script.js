@@ -97,7 +97,7 @@ function isWin() {
         for(let j = 1; j <= 4; j++){
             z++;
             coordinate = '#x' + i + '_' + 'y' + j;
-            chip = $("#board " + coordinate).children().attr('alt');
+            chip = document.querySelector("#board " + coordinate).children[0].getAttribute('alt');
             if(!chip) chip = 16;
             if(parseInt(chip) != z) {
                 return false;
