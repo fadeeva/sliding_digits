@@ -14,6 +14,7 @@ const GRID = {
 
 const BOARD = document.getElementById("board");
 
+
 $(document).ready(function(){
     
     orderBoard();
@@ -72,14 +73,20 @@ $(document).ready(function(){
     
 });
 
-function showWinWindow(show = false) {
+
+function showWinWindow(show=false) {
+    let winnerCnt = document.getElementById("winner_container");
     if(show) {
-        $("#winner_container").css("display", "flex");
-        $("#current_time").text($("#stopwatch").text() + " сек.");
+        winnerCnt.style.display = "flex";
+        
+        let currentTimeCnt = document.getElementById("current_time");
+        let currentTime = document.getElementById("stopwatch");
+        currentTimeCnt.textContent = currentTime.textContent + " сек.";
     } else {
-        $("#winner_container").css("display", "none");
+        winnerCnt.style.display = "none";
     }
 }
+
 
 function isWin() {
     let coordinate;
@@ -100,10 +107,12 @@ function isWin() {
     return true;
 }
 
+
 function newGame() {
     setNewBoard();
     startWatch();
 }
+
 
 function setNewBoard() {
     clearBoard();
@@ -111,9 +120,11 @@ function setNewBoard() {
     drawBoard(randomBoard);  
 }
 
+
 function clearBoard() {
     BOARD.innerHTML = "";
 }
+
 
 function orderBoard() {
     clearBoard();
@@ -121,11 +132,13 @@ function orderBoard() {
     drawBoard(RIGHT_ORDER);
 }
 
+
 function moveIsLegal(x, y, xNull, yNull) {
     let result = ( (x == xNull) && (Math.abs(y - yNull) == 1))
                || ((y == yNull) && (Math.abs(x - xNull) == 1) );
     return result;
 }
+
 
 function getCoordinates(elementID) {
     let coordinates = { top: 0, left: 0 };
@@ -138,6 +151,7 @@ function getCoordinates(elementID) {
     
     return coordinates;
 }
+
 
 function shuffle() {
     let orderedBoard = RIGHT_ORDER.slice();
@@ -152,6 +166,7 @@ function shuffle() {
     
     return orderedBoard;
 }
+
 
 function drawBoard(order) {
     let imgUrlBase = "img/digits/";
